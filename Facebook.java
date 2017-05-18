@@ -9,14 +9,28 @@ public class Facebook {
 String url=System.getProperty("user.dir")+"\\src\\geckodriver.exe";
 String drivepath=System.setProperty("webdriver.gecko.driver", url);
 WebDriver driver=new FirefoxDriver();
-driver.get("http://facebook.com");	
-driver.findElement(By.id("email")).sendKeys("EMail or user name");
+driver.get("https://www.facebook.com/");	
+String expectedUrl= "https://www.facebook.com/";
+String actualUrl=driver.getCurrentUrl();
+
+if(actualUrl.equals(expectedUrl))
+{
+	System.out.println("Test Passed");
+	}
+else
+{
+	System.out.println("Test Failed");
+	
+}
+ 
+
+/*driver.findElement(By.id("email")).sendKeys("Email or user name");
 driver.findElement(By.id("pass")).sendKeys("Password");
 driver.findElement(By.id("u_0_q")).click();
 Thread.sleep(15000);
 driver.findElement(By.id("userNavigationLabel")).click();
 Thread.sleep(3000);
-driver.findElement(By.partialLinkText("Log out")).click();
+driver.findElement(By.partialLinkText("Log out")).click();*/
 
 
 
