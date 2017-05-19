@@ -11,15 +11,14 @@ String drivepath=System.setProperty("webdriver.gecko.driver", url);
 WebDriver driver=new FirefoxDriver();
 driver.get("https://www.facebook.com/");	
 //String title="Facebook - Log In or Sign Up";
-Thread.sleep(6000);
-driver.findElement(By.xpath("//input[@id='u_0_5']")).sendKeys("Bhot");
-driver.findElement(By.xpath("//input[@id='u_0_7']")).sendKeys("Sanskari");
-driver.findElement(By.xpath("//input[@id='u_0_a']")).sendKeys("9876543210");
-driver.findElement(By.xpath("//input[@id='u_0_h']")).sendKeys("Password");
-driver.findElement(By.xpath("//input[@id='day']")).sendKeys("16");
-driver.findElement(By.xpath("//input[@id='month']")).sendKeys("Dec");
-driver.findElement(By.xpath("//input[@id='year']")).sendKeys("1995");
-driver.findElement(By.xpath("//input[@id='u_0_n']")).sendKeys("2");
-
+driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Bhot");
+driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Sanskari");
+driver.findElement(By.xpath("//input[@name='reg_email__']")).sendKeys("9876543210");
+driver.findElement(By.xpath("//input[@name='reg_passwd__']")).sendKeys("Password");
+driver.findElement(By.xpath("//select[@id='day']")).sendKeys("27");
+driver.findElement(By.xpath("//select[@id='month']")).sendKeys("Oct");
+driver.findElement(By.xpath("//select[@id='year']")).sendKeys("1995");
+int count = driver.findElements(By.name("sex")).size();
+driver.findElements(By.name("sex")).get(1).click();
 }
 }
