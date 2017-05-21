@@ -1,0 +1,16 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.By;
+
+public class GetLabel {
+
+	public static void main(String[] args) {
+		String url=System.getProperty("user.dir")+"\\src\\geckodriver.exe";
+		String driverpath=System.setProperty("webdriver.gecko.driver", url);
+		WebDriver driver=new FirefoxDriver();
+		driver.get("https://www.facebook.com/");
+		driver.findElement(By.cssSelector("input[id='email']")).sendKeys("9041498019");
+		driver.findElement(By.cssSelector("input[id='pass']")).sendKeys("5645465");
+		driver.findElement(By.cssSelector("input[id='u_0_q']")).click();
+		
